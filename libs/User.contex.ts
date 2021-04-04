@@ -1,7 +1,8 @@
 import { createContext } from "react";
 
+export type User = firebase.default.User & { username: string };
 export interface IUserContex {
-  user: firebase.default.User;
+  user: User;
   username: string;
 }
 
