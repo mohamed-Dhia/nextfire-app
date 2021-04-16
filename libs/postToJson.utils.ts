@@ -1,15 +1,17 @@
-import firebase from "firebase";
-import type { Post } from "components/PostFeed.component";
+import type { IPost } from "@components/PostFeed.component";
+import type {
+  DocumentData,
+  QueryDocumentSnapshot,
+  Timestamp,
+} from "./firebase.utils";
 
-export type PostDoc = firebase.firestore.DocumentData &
-  Post & {
-    createdAt: firebase.firestore.Timestamp;
-    updatedAt: firebase.firestore.Timestamp;
+export type PostDoc = DocumentData &
+  IPost & {
+    createdAt: Timestamp;
+    updatedAt: Timestamp;
   };
 
-const postToJson = (
-  doc: firebase.firestore.QueryDocumentSnapshot<PostDoc>
-): Post => {
+const postToJson = (doc: QueryDocumentSnapshot<PostDoc>): IPost => {
   const data = doc.data();
   return {
     ...data,

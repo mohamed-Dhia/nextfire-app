@@ -1,31 +1,31 @@
 import Link from "next/link";
 import React, { FC } from "react";
-import { Post } from "./PostFeed.component";
+import { IPost } from "./PostFeed.component";
 
-const PostItem: FC<{ post: Post; admin: boolean }> = ({
-  post,
+const PostItem: FC<{ post: IPost; admin: boolean }> = ({
+  post: { content, heartCount, username, slug, title },
   admin = false,
 }) => {
-  const wordCount = post.content.trim().split(/\s+/g).length;
+  const wordCount = content.trim().split(/\s+/g).length;
   const minutesToRead = (wordCount / 100 + 1).toFixed(0);
 
   return (
     <div className="card">
-      <Link href={`/${post.username}`}>
+      <Link href={`/${username}`}>
         <a>
-          <strong>By @{post.username}</strong>
+          <strong>By @{username}</strong>
         </a>
       </Link>
-      <Link href={`/${post.username}/${post.slug}`}>
+      <Link href={`/${username}/${slug}`}>
         <h2>
-          <a>By @{post.title}</a>
+          <a>{title}</a>
         </h2>
       </Link>
       <footer>
         <span>
           {wordCount} words. {minutesToRead} min read
         </span>
-        <span>💗{post.heartCount} hearts</span>
+        <span> 💗 {heartCount} hearts</span>
       </footer>
     </div>
   );

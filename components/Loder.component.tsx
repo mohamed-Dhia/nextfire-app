@@ -1,10 +1,6 @@
-import { FC } from "react";
+import React, { FC } from "react";
 
-interface OwnProps {
-  show: boolean;
-}
-
-const Loader: FC<OwnProps> = ({ show }) =>
-  show ? <div className="loader"></div> : null;
+const Loader: FC<{ show: boolean }> = ({ show }) =>
+  show ? <div className="loader" /> : null;
 
 export default Loader;

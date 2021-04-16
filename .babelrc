@@ -4,23 +4,26 @@
     [
       "module-resolver",
       {
-        "root": ["./"],
+        "root": ["/"],
         "alias": {
-          "@components": "./src/components",
-          "@api": "./src/api",
-          "@models": "./src/models",
-          "@screens": "./src/screens",
-          "@hooks": "./src/hooks",
-          "@services": "./src/services",
-          "@constants": "./src/constants",
-          "@context": "./src/context",
-          "@queries": "./src/queries",
-          "@data": "./src/data",
-          "@typeDefs": "./src/types",
-          "@generated": "./src/generated",
-          "@utils": "./src/utils",
+          "@components": "./components",
+          "@api": "./api",
+          "@models": "./models",
+          "@screens": "./screens",
+          "@hooks": "./hooks",
+          "@services": "./services",
+          "@constants": "./constants.",
+          "@context": "./context",
+          "@queries": "./queries",
+          "@data": "./data",
+          "@typeDefs": "./types",
+          "@generated": "./generated",
           "@public": "./public",
-          "@libs": "./libs"
+          "@libs": "./libs",
+          "@utils": "./utils",
+          "@app": "./app",
+          "@assets": "./assets",
+          "@styles": "./styles"
         }
       }
     ]

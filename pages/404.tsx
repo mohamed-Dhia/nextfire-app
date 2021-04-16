@@ -1,0 +1,24 @@
+import { NextPage } from "next";
+import Link from "next/link";
+import React from "react";
+
+const Custom404: NextPage = () => (
+  <main>
+    <h1>404 - That page does not seem to exist...</h1>
+    <iframe
+      title="404 page"
+      src="https://giphy.com/embed/l2JehQ2GitHGdVG9y"
+      width="480"
+      height="362"
+      frameBorder="0"
+      allowFullScreen
+    />
+    <Link href="/">
+      <button type="button" className="btn-blue">
+        Go home
+      </button>
+    </Link>
+  </main>
+);
+
+export default Custom404;

@@ -22,3 +22,18 @@ export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();
+export const { STATE_CHANGED } = firebase.storage.TaskEvent;
+
+export const {
+  FieldValue,
+  FieldValue: { serverTimestamp, increment },
+  Timestamp: { fromMillis },
+} = firebase.firestore;
+
+export type DocumentData = firebase.firestore.DocumentData;
+export type Timestamp = firebase.firestore.Timestamp;
+export type QueryDocumentSnapshot<
+  T
+> = firebase.firestore.QueryDocumentSnapshot<T>;
+export type QuerySnapshot<T> = firebase.firestore.QuerySnapshot<T>;
+export type DocumentReference<T> = firebase.firestore.DocumentReference<T>;

@@ -1,12 +1,12 @@
 import { GetServerSideProps, NextPage } from "next";
 import React from "react";
-import PostFeed, { Post } from "../../components/PostFeed.component";
+import PostFeed, { IPost } from "../../components/PostFeed.component";
 import UserProfile from "../../components/UserProfile.component";
 import getUserByUsername from "../../libs/getUserByUsername.utils";
 import postToJson from "../../libs/postToJson.utils";
 import { User } from "../../libs/User.contex";
 
-type UserProfilePageProps = { user: User; posts: Post[] };
+type UserProfilePageProps = { user: User; posts: IPost[] };
 
 export const getServerSideProps: GetServerSideProps<
   UserProfilePageProps,
@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps<
   const userDoc = await getUserByUsername(username as string);
 
   let user: User = null;
-  let posts: Post[] = null;
+  let posts: IPost[] = null;
 
   if (userDoc) {
     user = userDoc.data();
